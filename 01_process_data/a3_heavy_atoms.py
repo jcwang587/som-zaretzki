@@ -52,5 +52,5 @@ for count, bin in zip(counts, bins):
 
 # Save the plot
 plt.savefig(
-    "../data/large_molecule.png", dpi=300, bbox_inches="tight"
-) 
+    "../data/heavy_atoms.png", dpi=300, bbox_inches="tight"
+)

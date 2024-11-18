@@ -3,12 +3,6 @@
 # The directory '/data/zaretzki/mae_s' will contain the structures with sulfur oxidation
 
 
-import sys
-
-sys.path.append("../src")
-from utils import renew_folder
-
-import shutil
 from schrodinger.structure import StructureReader
 
 import matplotlib.pyplot as plt
@@ -131,4 +125,4 @@ for text in v.subset_labels:
         text.set_fontweight("bold")
 
 # save the venn diagram to the current directory
-plt.savefig("../data/venn_diagram.png", dpi=300, bbox_inches="tight")
+plt.savefig("../data/cns_venn_diagram.png", dpi=300, bbox_inches="tight")
