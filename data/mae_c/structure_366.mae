@@ -1,0 +1,71 @@
+{ 
+ s_m_m2io_version
+ :::
+ 2.0.0 
+} 
+
+f_m_ct { 
+ s_m_title
+ b_sd_chiral_flag
+ s_sd_ID
+ s_sd_PRIMARY\_SOM
+ s_sd_Citation
+ i_sd_New\_Or\_Updated\_From\_Original\_Merck\_Dataset
+ s_ff_OPLSVersion
+ i_m_ct_format
+ :::
+ NDMA 
+  0
+  NDMA 
+  "4 5" 
+  "Bellec et al., Carcinogenesis, 1996, 17, 2029-2034" 
+  1
+  OPLS4 
+  2
+ m_atom[11] { 
+  # First column is atom index #
+  i_m_mmod_type
+  r_m_x_coord
+  r_m_y_coord
+  r_m_z_coord
+  i_m_residue_number
+  i_m_color
+  r_m_charge1
+  r_m_charge2
+  i_m_atomic_number
+  s_m_color_rgb
+  i_m_Hcount
+  :::
+  1 25 -1.396807 2.426659 0.985805 900 43 -0.07510 -0.07510 7 5757FF  0
+  2 15 -2.452256 1.826486 0.944617 900 70 -0.29062 -0.29062 8 FF2F2F  0
+  3 25 -1.397600 3.592383 0.350300 900 43 -0.06413 -0.06413 7 5757FF  0
+  4 3 -2.503515 4.008450 -0.516610 900 2 -0.02512 -0.02512 6 A0A0A0  3
+  5 3 -0.088625 4.177603 0.113715 900 2 -0.02512 -0.02512 6 A0A0A0  3
+  6 41 -2.450684 5.073215 -0.741912 900 21 0.08002 0.08002 1 FFFFFF  0
+  7 41 -2.477633 3.450926 -1.452973 900 21 0.08002 0.08002 1 FFFFFF  0
+  8 41 -3.466027 3.822227 -0.038128 900 21 0.08002 0.08002 1 FFFFFF  0
+  9 41 -0.159552 5.257885 -0.012537 900 21 0.08002 0.08002 1 FFFFFF  0
+  10 41 0.581123 3.983876 0.952977 900 21 0.08002 0.08002 1 FFFFFF  0
+  11 41 0.359513 3.750627 -0.783649 900 21 0.08002 0.08002 1 FFFFFF  0
+  :::
+ } 
+ m_bond[10] { 
+  # First column is bond index #
+  i_m_from
+  i_m_to
+  i_m_order
+  :::
+  1 1 2 2
+  2 1 3 1
+  3 3 4 1
+  4 3 5 1
+  5 4 6 1
+  6 4 7 1
+  7 4 8 1
+  8 5 9 1
+  9 5 10 1
+  10 5 11 1
+  :::
+ } 
+} 
+

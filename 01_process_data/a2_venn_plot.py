@@ -125,4 +125,4 @@ for text in v.subset_labels:
         text.set_fontweight("bold")
 
 # save the venn diagram to the current directory
-plt.savefig("../data/cns_venn_diagram.png", dpi=300, bbox_inches="tight")
+plt.savefig("../data/venn_diagram.png", dpi=300, bbox_inches="tight")

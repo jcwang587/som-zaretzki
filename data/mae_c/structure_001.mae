@@ -1,0 +1,76 @@
+{ 
+ s_m_m2io_version
+ :::
+ 2.0.0 
+} 
+
+f_m_ct { 
+ s_m_title
+ b_sd_chiral_flag
+ s_sd_ID
+ i_sd_PRIMARY\_SOM
+ i_sd_SECONDARY\_SOM
+ s_sd_Citation
+ i_sd_New\_Or\_Updated\_From\_Original\_Merck\_Dataset
+ s_ff_OPLSVersion
+ i_m_ct_format
+ :::
+ 1_2_4_trichlorobenzene 
+  0
+  1_2_4_trichlorobenzene 
+  3
+  7
+  "Bogaards et al.,Toxicol. Appl. Pharmacol.,132,44,1995" 
+  0
+  OPLS4 
+  2
+ m_atom[12] { 
+  # First column is atom index #
+  i_m_mmod_type
+  r_m_x_coord
+  r_m_y_coord
+  r_m_z_coord
+  i_m_residue_number
+  i_m_color
+  r_m_charge1
+  r_m_charge2
+  i_m_atomic_number
+  s_m_color_rgb
+  i_m_Hcount
+  :::
+  1 57 -0.000993 -0.001955 -0.001438 900 9 -0.13579 -0.13579 17 006400  0
+  2 2 -0.022928 1.722412 0.008578 900 2 0.07743 0.07743 6 A0A0A0  0
+  3 2 1.175335 2.435217 0.003327 900 2 -0.11266 -0.11266 6 A0A0A0  1
+  4 2 1.156458 3.830859 0.012039 900 2 -0.10512 -0.10512 6 A0A0A0  1
+  5 2 -0.058889 4.517976 0.026652 900 2 0.07521 0.07521 6 A0A0A0  0
+  6 2 -1.263931 3.800027 0.032119 900 2 0.08324 0.08324 6 A0A0A0  0
+  7 2 -1.239008 2.404218 0.022253 900 2 -0.10785 -0.10785 6 A0A0A0  1
+  8 57 -0.035189 6.247316 0.038874 900 9 -0.12541 -0.12541 17 006400  0
+  9 57 -2.795375 4.602953 0.051640 900 9 -0.12160 -0.12160 17 006400  0
+  10 41 2.116028 1.904118 -0.006832 900 21 0.15377 0.15377 1 FFFFFF  0
+  11 41 2.083769 4.385035 0.008179 900 21 0.15615 0.15615 1 FFFFFF  0
+  12 41 -2.165546 1.849948 0.025742 900 21 0.16262 0.16262 1 FFFFFF  0
+  :::
+ } 
+ m_bond[12] { 
+  # First column is bond index #
+  i_m_from
+  i_m_to
+  i_m_order
+  :::
+  1 1 2 1
+  2 2 3 1
+  3 2 7 2
+  4 3 4 2
+  5 3 10 1
+  6 4 5 1
+  7 4 11 1
+  8 5 6 2
+  9 5 8 1
+  10 6 7 1
+  11 6 9 1
+  12 7 12 1
+  :::
+ } 
+} 
+
