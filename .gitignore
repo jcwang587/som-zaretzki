@@ -1,0 +1,8 @@
+.idea/
+**/output_*/
+**/__pycache__/
+**/gen0/data/qmox/
+**/gen1/data/qmox/1_c/
+**/*.chk
+*.pt
+data/qmox/part*
