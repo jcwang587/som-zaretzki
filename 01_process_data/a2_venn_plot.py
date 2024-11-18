@@ -15,9 +15,11 @@ import matplotlib.pyplot as plt
 from matplotlib_venn import venn3, venn3_circles
 
 # Read the structures
-reader = StructureReader("../data/zaretzki/0_all/3A4.sdf")
+reader = StructureReader("../data/3A4.sdf")
 
 primary_som_all = []
+secondary_som_all = []
+tertiary_som_all = []
 mol_title_all = []
 
 # Iterate through the structures and get the PRIMARY_SOM property
@@ -35,9 +37,31 @@ for i, structure in enumerate(reader, start=1):
     else:
         primary_som_all.append([primary_som_int])
 
+    secondary_som_int = structure.property.get("i_sd_SECONDARY\_SOM", "N/A")
+    if secondary_som_int == "N/A":
+        secondary_som_string = structure.property.get("s_sd_SECONDARY\_SOM", "N/A")
+        if secondary_som_string == "N/A":
+            secondary_som_all.append([])
+        else:
+            secondary_som_list = list(map(int, secondary_som_string.split()))
+            secondary_som_all.append(secondary_som_list)
+    else:
+        secondary_som_all.append([secondary_som_int])
+
+    tertiary_som_int = structure.property.get("i_sd_TERTIARY\_SOM", "N/A")
+    if tertiary_som_int == "N/A":
+        tertiary_som_string = structure.property.get("s_sd_TERTIARY\_SOM", "N/A")
+        if tertiary_som_string == "N/A":
+            tertiary_som_all.append([])
+        else:
+            tertiary_som_list = list(map(int, tertiary_som_string.split()))
+            tertiary_som_all.append(tertiary_som_list)
+    else:
+        tertiary_som_all.append([tertiary_som_int])
+
 
 # Re-read the structures
-reader = StructureReader("../data/zaretzki/0_all/3A4.sdf")
+reader = StructureReader("../data/3A4.sdf")
 
 # Iterate through the structures and print the element
 n_oxidation_idx = []
@@ -48,7 +72,12 @@ p_oxidation_idx = []
 br_oxidation_idx = []
 
 for i, structure in enumerate(reader, start=1):
-    som_indices = primary_som_all[i - 1]
+    primary_som_indices = primary_som_all[i - 1]
+    secondary_som_indices = secondary_som_all[i - 1]
+    tertiary_som_indices = tertiary_som_all[i - 1]
+    som_indices = primary_som_indices + secondary_som_indices + tertiary_som_indices
+
+    print(som_indices)
     for som_index in som_indices:
         element = structure.atom[som_index].element
         if element == "N":
@@ -76,24 +105,6 @@ print(o_oxidation_idx)
 print(p_oxidation_idx)
 print(br_oxidation_idx)
 
-
-# Create a folder for nitrogen oxidation molecules
-renew_folder("../data/zaretzki/1_c/mae")
-renew_folder("../data/zaretzki/1_c/png")
-# copy the structures with carbon oxidation to the new folder based on the c_oxidation_idx
-for i in c_oxidation_idx:
-    shutil.copy(
-        f"../data/zaretzki/0_all/mae/structure_{i:03d}.mae",
-        f"../data/zaretzki/1_c/mae/structure_{i:03d}.mae",
-    )
-
-# copy the png files to the new folder based on the c_oxidation_idx
-for i in c_oxidation_idx:
-    shutil.copy(
-        f"../data/zaretzki/0_all/png/{i:03d}_{mol_title_all[i-1]}_som.png",
-        f"../data/zaretzki/1_c/png/{i:03d}_{mol_title_all[i-1]}_som.png",
-    )
-
 # generate venn diagram for the three sets
 plt.figure(figsize=(10, 8))
 v = venn3(
@@ -120,4 +131,4 @@ for text in v.subset_labels:
         text.set_fontweight("bold")
 
 # save the venn diagram to the current directory
-plt.savefig("../data/zaretzki/0_all/venn_diagram.png", dpi=300, bbox_inches="tight")
+plt.savefig("../data/venn_diagram.png", dpi=300, bbox_inches="tight")
