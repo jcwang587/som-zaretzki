@@ -14,7 +14,7 @@ from schrodinger.forcefield.minimizer import minimize_structure
 
 
 # Read the structures
-reader = StructureReader("../data/zaretzki/0_all/3A4.sdf")
+reader = StructureReader("../data/3A4.sdf")
 
 # Count the number of structures
 structure_count = sum(1 for _ in reader)
@@ -23,10 +23,10 @@ structure_count = sum(1 for _ in reader)
 print(f"The number of structures is: {structure_count}")
 
 # Create a new folder to store the structures
-renew_folder("../data/zaretzki/0_all/mae")
+renew_folder("../data/mae")
 
 # Reset the reader to the beginning of the file
-reader = StructureReader("../data/zaretzki/0_all/3A4.sdf")
+reader = StructureReader("../data/3A4.sdf")
 
 # Export all the structures to multiple MAE files
 for i, structure in enumerate(reader, start=1):
@@ -35,6 +35,6 @@ for i, structure in enumerate(reader, start=1):
 
     minimize_structure(structure)
 
-    mae_path = f"../data/zaretzki/0_all/mae/structure_{i:03d}.mae"
+    mae_path = f"../data/mae/structure_{i:03d}.mae"
     with StructureWriter(mae_path) as writer:
         writer.append(structure)
