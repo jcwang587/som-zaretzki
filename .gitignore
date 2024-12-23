@@ -6,3 +6,5 @@
 **/*.chk
 *.pt
 data/qmox/part*
+data/.DS_Store
+.DS_Store
