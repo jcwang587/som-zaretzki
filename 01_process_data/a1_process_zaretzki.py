@@ -35,6 +35,9 @@ for i, structure in enumerate(reader, start=1):
 
     minimize_structure(structure)
 
-    mae_path = f"../data/mae/structure_{i:03d}.mae"
+    # Get the name of the molecule
+    name = structure.title
+
+    mae_path = f"../data/mae/{i:03d}_{name}.mae"
     with StructureWriter(mae_path) as writer:
         writer.append(structure)
